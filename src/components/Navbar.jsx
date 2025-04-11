@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 left-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">     
+    <nav className="sticky top-0 left-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo Section */}
@@ -109,32 +109,34 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
+{/* Mobile Menu */}
+{/* Mobile Menu */}
+<AnimatePresence>
   {isMenuOpen && (
     <motion.div
       initial={{ opacity: 0, x: '100%' }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: '100%' }}
-      className="md:hidden fixed inset-0 bg-gray-900/95 backdrop-blur-xl z-50" // Increased z-index
+      className="md:hidden fixed inset-0 z-50 bg-gray-900"
     >
       <div className="relative h-full flex flex-col p-6">
         {/* Close Button */}
         <button
           onClick={() => setIsMenuOpen(false)}
-          className="self-end p-2 text-gray-400 hover:text-blue-400 mb-8"
+          className="self-end p-2 bg-gray-300 hover:text-blue-400 mb-12 rounded-lg text-gray-800"
           aria-label="Close menu"
         >
           <FiX size={28} />
         </button>
 
         {/* Mobile Links */}
-        <div className="flex-1 flex flex-col items-center justify-center space-y-6">
+        <div className="flex-1 flex flex-col items-center justify-center space-y-4">
           {navLinks.map((link) => (
             <motion.div
               key={link.name}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full text-center"
+              className="w-full"
             >
               <a
                 href={link.path}
@@ -142,7 +144,9 @@ const Navbar = () => {
                   e.preventDefault();
                   handleScroll(link.path);
                 }}
-                className="block py-4 text-2xl text-gray-300 hover:text-blue-400 transition-colors font-medium"
+                className="block py-4 px-6 text-xl bg-gray-100 hover:text-blue-400 
+                           text-gray-800 rounded-xl transition-all duration-300
+                           hover:bg-gray-700"
               >
                 {link.name}
               </a>
@@ -151,8 +155,8 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Social Icons */}
-        <div className="mt-auto pt-8 border-t border-gray-800">
-          <div className="flex justify-center space-x-6">
+        <div className="mt-auto pt-12 border-t border-gray-800">
+          <div className="flex justify-center space-x-8">
             {socialLinks.map((social, index) => (
               <motion.a
                 key={index}
@@ -160,7 +164,8 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
-                className="text-2xl text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-2xl bg-gray-300 hover:text-blue-400 transition-colors
+                           text-gray-800 p-3 rounded-full"
               >
                 {social.icon}
               </motion.a>
