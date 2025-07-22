@@ -16,20 +16,20 @@ const Contact = () => {
     {
       icon: <FiMail />,
       title: "Email Me",
-      value: "hello@yourdomain.com",
-      link: "mailto:hello@yourdomain.com"
+      value: "garlandleo200@gmail.com",
+      link: "mailto:garlandleo200@gmail.com"
     },
     {
       icon: <FiMapPin />,
       title: "Location",
-      value: "Barcelona, Spain",
+      value: "Kaduna, Nigeria",
       link: "https://maps.app.goo.gl/..."
     },
     {
       icon: <FiPhone />,
       title: "Call Me",
-      value: "+34 123 456 789",
-      link: "tel:+34123456789"
+      value: "+234 8135206900",
+      link: "tel:+2348135206900"
     }
   ];
 
