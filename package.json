@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^12.6.3",
+    "@icons-pack/react-simple-icons": "^13.6.0",
+    "framer-motion": "^12.23.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.55.0",
