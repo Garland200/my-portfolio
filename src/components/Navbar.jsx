@@ -52,7 +52,7 @@ const Navbar = () => {
               className="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full"
             />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-              Light
+              Doxa
             </span>
           </a>
 

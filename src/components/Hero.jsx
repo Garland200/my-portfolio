@@ -12,10 +12,9 @@ const Hero = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const roles = useMemo(() => [
-    'Front-End Developer',
-    'React Specialist',
-    'UI/UX Enthusiast',
-    'Problem Solver'
+    'Web Developer',
+    'Technical Writer',
+    'AI/ML Enthusiast'
   ], []);
 
   useEffect(() => {
@@ -57,18 +56,9 @@ const Hero = () => {
     }
   };
 
-  const floatingAnimation = {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  };
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gray-900 pt-24 px-4 sm:px-8 lg:px-16 relative overflow-hidden">
-      {/* Animated Background Elements */}
+      {/* Simplified Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}
@@ -84,7 +74,7 @@ const Hero = () => {
 
       <div className="w-full mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
-        <div className="space-y-6 relative z-10">
+        <div className="space-y-6 relative z-10 ml-20">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -161,41 +151,70 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Enhanced Headshot Section */}
+        {/* Refined Headshot Section */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative group flex justify-center lg:justify-end"
+          className="relative flex justify-center lg:justify-center"
         >
+          {/* Main headshot container with subtle floating animation */}
           <motion.div 
-            animate={floatingAnimation}
-            className="relative w-64 h-80 sm:w-80 sm:h-96 overflow-hidden rounded-2xl border-4 border-gray-800 shadow-2xl"
+            animate={{ 
+              y: [0, -8, 0],
+              rotateY: [0, 2, 0]
+            }}
+            transition={{ 
+              duration: 4, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="relative group"
           >
-            <div className="w-full h-full bg-gradient-to-br from-blue-400/20 to-purple-600/20">
+            {/* Glowing backdrop */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+            
+            {/* Image container */}
+            <div className="relative w-72 h-120 sm:w-80 sm:h-96 rounded-2xl overflow-hidden border border-gray-700/50 shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900">
               <img 
                 src={headshot}
                 alt="Garland" 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="eager"
               />
+              
+              {/* Subtle overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent" />
+              
+              {/* Interactive border glow */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/0 via-purple-500/0 to-blue-400/0 group-hover:from-blue-400/30 group-hover:via-purple-500/30 group-hover:to-blue-400/30 transition-all duration-500" 
+                   style={{ 
+                     background: 'linear-gradient(45deg, transparent, transparent)',
+                     boxShadow: 'inset 0 0 0 1px transparent'
+                   }}
+                   onMouseEnter={(e) => {
+                     e.target.style.boxShadow = 'inset 0 0 0 1px rgba(59, 130, 246, 0.3)';
+                   }}
+                   onMouseLeave={(e) => {
+                     e.target.style.boxShadow = 'inset 0 0 0 1px transparent';
+                   }}
+              />
             </div>
-            
-            {/* Glowing border effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+
+            {/* Single, clean accent element */}
+            <motion.div 
+              animate={{ 
+                rotate: [0, 1, -1, 0],
+                scale: [1, 1.02, 1]
+              }}
+              transition={{ 
+                duration: 6, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="absolute -inset-6 border border-blue-400/20 rounded-3xl group-hover:border-blue-400/40 transition-colors duration-500"
+            />
           </motion.div>
-          
-          {/* Enhanced Decorative Elements */}
-          <motion.div 
-            animate={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="absolute -inset-4 border-2 border-blue-400/30 rounded-3xl transform rotate-2 scale-95 group-hover:rotate-0 group-hover:scale-100 transition-all duration-500" 
-          />
-          <motion.div 
-            animate={{ rotate: [0, -3, 3, 0] }}
-            transition={{ duration: 5, repeat: Infinity }}
-            className="absolute -inset-8 border border-purple-400/20 rounded-3xl transform -rotate-1 scale-90 group-hover:rotate-1 group-hover:scale-105 transition-all duration-700" 
-          />
         </motion.div>
       </div>
     </section>

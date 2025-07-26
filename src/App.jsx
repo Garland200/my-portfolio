@@ -15,8 +15,6 @@ function App() {
       <Hero/>
       <Projects/>
       <Skills/>
-      <Testimonials/>
-      <Blog/>
       <Contact/>
     </Router>
   );
