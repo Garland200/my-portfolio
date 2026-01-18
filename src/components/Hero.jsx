@@ -72,7 +72,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="w-full mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="w-full mx-auto -mt-20 grid lg:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <div className="space-y-6 relative z-10 ml-20">
           <motion.h1 
