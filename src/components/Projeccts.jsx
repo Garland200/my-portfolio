@@ -1,83 +1,92 @@
 // src/components/Projects.jsx
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiPlay, FiCode } from 'react-icons/fi';
-import { SiReact, SiTailwindcss, SiTypescript, SiFirebase, SiNextdotjs, SiNodedotjs, SiMongodb, SiStripe } from 'react-icons/si';
+import { 
+  SiReact, SiTailwindcss, SiTypescript, SiNodedotjs, SiMongodb, 
+  SiAngular, SiHtml5, SiCss3, SiJavascript, SiPython 
+} from 'react-icons/si';
+import { FiCpu } from 'react-icons/fi';
 import { useState } from 'react';
+import fyurr from '../assets/fyurr.png';
+import breakout from "../assets/breakout.png";
+import task from "../assets/task.png";
+import ls from "../assets/loadshedding.png";
+import trivia from "../assets/trivia.png";
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null);
 
   const projects = [
     {
-      title: "AI-Powered Task Manager",
-      description: "Revolutionary task management app with AI-driven priority suggestions, natural language processing, and smart scheduling algorithms.",
-      longDescription: "Built with React and TypeScript, this application uses machine learning to analyze user behavior and automatically prioritize tasks. Features include drag-and-drop kanban boards, real-time collaboration, voice commands, and intelligent deadline predictions.",
-      tech: [<SiReact />, <SiTypescript />, <SiTailwindcss />, <SiNodedotjs />, <SiMongodb />],
-      demo: "https://ai-task-manager-demo.vercel.app",
-      code: "https://github.com/yourusername/ai-task-manager",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Fyurr – Music Event Manager",
+      description: "Full-stack web app for managing artists, venues, and shows with booking and authentication features.",
+      longDescription: "Fyurr is a full-stack application that allows users to book, manage, and list live music events. It includes CRUD functionality for venues, artists, and shows, user authentication, and relational data modeling between entities.",
+      tech: [<SiPython />, <SiHtml5 />, <SiCss3 />, <SiJavascript />],
+      demo: "https://fyurr-demo.vercel.app",
+      code: "https://github.com/GarlandIL/Fyurr",
+      image: fyurr,
       featured: true,
       category: "Full Stack",
       year: "2024"
     },
     {
-      title: "Crypto Trading Dashboard",
-      description: "Real-time cryptocurrency trading platform with advanced charting, portfolio analytics, and automated trading strategies.",
-      longDescription: "A comprehensive trading dashboard featuring WebSocket connections for live price feeds, TradingView charts integration, portfolio performance tracking, and risk management tools. Built with modern React patterns and optimized for high-frequency data updates.",
-      tech: [<SiReact />, <SiNextdotjs />, <SiTypescript />, <SiTailwindcss />],
-      demo: "https://crypto-dashboard-demo.vercel.app",
-      code: "https://github.com/yourusername/crypto-dashboard",
-      image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Trivia App – Interactive Quiz Game",
+      description: "Fun web-based quiz game with random questions, scores, and timed challenges.",
+      longDescription: "A front-end web app where users can play trivia games across various topics. It fetches randomized questions via API, tracks scores, and provides instant feedback. The interface is responsive and engaging for all devices.",
+      tech: [<SiReact />, <SiTailwindcss />, <SiJavascript />],
+      demo: "https://trivia-app-demo.vercel.app",
+      code: "https://github.com/GarlandIL/Trivia",
+      image: trivia,
       featured: true,
       category: "Frontend",
       year: "2024"
     },
     {
-      title: "E-Commerce Platform Pro",
-      description: "Full-featured e-commerce solution with payment processing, inventory management, and advanced analytics dashboard.",
-      longDescription: "Complete e-commerce ecosystem with Stripe integration, real-time inventory tracking, customer analytics, order management, and admin dashboard. Features include product recommendations, wishlist functionality, and multi-vendor support.",
-      tech: [<SiReact />, <SiNextdotjs />, <SiStripe />, <SiFirebase />, <SiTailwindcss />],
-      demo: "https://ecommerce-pro-demo.vercel.app",
-      code: "https://github.com/yourusername/ecommerce-pro",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Project Coffee Shop",
+      description: "Elegant coffee shop web app with menu display, cart, and responsive design.",
+      longDescription: "An interactive coffee shop simulation that lets users browse a menu, customize drinks, and add them to a cart. Designed with clean layouts, smooth transitions, and responsive components for a real e-commerce experience.",
+      tech: [<SiHtml5 />, <SiCss3 />, <SiJavascript />],
+      demo: "https://coffee-shop-demo.vercel.app",
+      code: "https://github.com/GarlandIL/Project-Coffee-Shop",
+      image: "https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg?auto=compress&cs=tinysrgb&w=800",
       featured: true,
-      category: "Full Stack",
+      category: "Frontend",
       year: "2024"
     },
     {
-      title: "Social Media Analytics",
-      description: "Comprehensive social media analytics platform with sentiment analysis and engagement tracking.",
-      longDescription: "Advanced analytics dashboard that aggregates data from multiple social platforms, performs sentiment analysis on posts and comments, tracks engagement metrics, and provides actionable insights for content creators and marketers.",
-      tech: [<SiReact />, <SiTypescript />, <SiNodedotjs />, <SiMongodb />],
-      demo: "https://social-analytics-demo.vercel.app",
-      code: "https://github.com/yourusername/social-analytics",
-      image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Genetic Algorithm Load Shedding System",
+      description: "AI-powered MATLAB system optimizing solar energy distribution through automated load shedding.",
+      longDescription: "An intelligent energy optimization system built with MATLAB that uses genetic algorithms to automate load shedding in solar-powered homes. It balances energy flow between solar and grid sources based on usage patterns.",
+      tech: [<FiCpu />],
+      demo: "https://github.com/GarlandIL/genetic-algorithm-optimized-energy-utilization-system",
+      code: "https://github.com/GarlandIL/genetic-algorithm-optimized-energy-utilization-system",
+      image: ls,
       featured: false,
-      category: "Full Stack",
+      category: "AI & Simulation",
       year: "2023"
     },
     {
-      title: "3D Portfolio Showcase",
-      description: "Interactive 3D portfolio website with Three.js animations and immersive user experience.",
-      longDescription: "Cutting-edge portfolio website featuring 3D models, particle systems, and interactive animations. Built with React Three Fiber and includes physics simulations, dynamic lighting, and responsive 3D layouts.",
-      tech: [<SiReact />, <SiTypescript />, <SiTailwindcss />],
-      demo: "https://3d-portfolio-demo.vercel.app",
-      code: "https://github.com/yourusername/3d-portfolio",
-      image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Task Manager App (Angular)",
+      description: "Modern Angular-based productivity tool for managing daily tasks efficiently.",
+      longDescription: "A responsive web app with full CRUD capabilities, sorting, filtering, and persistent data storage using Angular Material. It helps users organize tasks based on priority and completion status.",
+      tech: [<SiAngular />, <SiTypescript />, <SiTailwindcss />],
+      demo: "https://task-manager-angular-demo.vercel.app",
+      code: "https://github.com/GarlandIL/task-manager",
+      image: task,
       featured: false,
-      category: "Frontend",
-      year: "2023"
+      category: "Frontend Framework",
+      year: "2024"
     },
     {
-      title: "Real-Time Chat App",
-      description: "Modern chat application with video calls, file sharing, and end-to-end encryption.",
-      longDescription: "Secure messaging platform with WebRTC video calls, file sharing capabilities, message encryption, group chats, and real-time typing indicators. Features include emoji reactions, message search, and dark/light themes.",
-      tech: [<SiReact />, <SiNodedotjs />, <SiMongodb />, <SiTailwindcss />],
-      demo: "https://chat-app-demo.vercel.app",
-      code: "https://github.com/yourusername/chat-app",
-      image: "https://images.pexels.com/photos/1591061/pexels-photo-1591061.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Breakout Game (HTML5 Canvas)",
+      description: "Classic arcade-style Breakout Game built with HTML5 Canvas and JavaScript.",
+      longDescription: "A modern version of the retro Breakout game featuring paddle control, dynamic brick layouts, collision detection, and score tracking. Fully responsive and optimized for smooth performance across devices.",
+      tech: [<SiHtml5 />, <SiCss3 />, <SiJavascript />],
+      demo: "https://garlandil.github.io/breakout-game",
+      code: "https://github.com/GarlandIL/breakout-game",
+      image: breakout,
       featured: false,
-      category: "Full Stack",
+      category: "Game Development",
       year: "2023"
     }
   ];
@@ -103,7 +112,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Showcasing innovative solutions that push the boundaries of web development
+            A showcase of my most impactful and technically diverse projects
           </p>
         </motion.div>
 
@@ -130,7 +139,6 @@ const Projects = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-transparent to-transparent" />
                   
-                  {/* Play button overlay */}
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -149,9 +157,7 @@ const Projects = () => {
                   <span className="text-gray-400 text-sm">{project.year}</span>
                 </div>
 
-                <h3 className="text-3xl font-bold text-gray-100 mb-4">
-                  {project.title}
-                </h3>
+                <h3 className="text-3xl font-bold text-gray-100 mb-4">{project.title}</h3>
 
                 <p className="text-gray-400 text-lg leading-relaxed">
                   {project.longDescription}
@@ -198,16 +204,14 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Other Projects - Grid Layout */}
+        {/* Other Projects - Grid */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h3 className="text-2xl font-bold text-gray-100 mb-8 text-center">
-            More Projects
-          </h3>
+          <h3 className="text-2xl font-bold text-gray-100 mb-8 text-center">More Projects</h3>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -230,8 +234,6 @@ const Projects = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent" />
-                
-                {/* Category badge */}
                 <div className="absolute top-4 left-4">
                   <span className="bg-blue-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
                     {project.category}
@@ -241,16 +243,12 @@ const Projects = () => {
 
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-semibold text-gray-100">
-                    {project.title}
-                  </h3>
+                  <h3 className="text-xl font-semibold text-gray-100">{project.title}</h3>
                   <span className="text-gray-500 text-sm">{project.year}</span>
                 </div>
-                
                 <p className="text-gray-400 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
-                
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((Icon, i) => (
                     <span
@@ -261,7 +259,6 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-
                 <div className="flex gap-3">
                   <a
                     href={project.demo}
@@ -284,7 +281,6 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Hover effect overlay */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: activeProject === index ? 1 : 0 }}

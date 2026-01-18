@@ -13,9 +13,9 @@ const Navbar = () => {
   ];
 
   const socialLinks = [
-    { icon: <FiGithub />, url: 'https://github.com/yourusername' },
-    { icon: <FiLinkedin />, url: 'https://linkedin.com/in/yourprofile' },
-    { icon: <FiFileText />, url: '/resume.pdf' },
+    { icon: <FiGithub />, url: 'https://github.com/GarlandIL' },
+    { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/garland-leo-681112240/' },
+    { icon: <FiFileText />, url: 'https://drive.google.com/file/d/1ZTUFGP5vsGuh_rstspYZP_JdrKh3xDj_/view?usp=drive_link' },
   ];
 
   const linkVariants = {
